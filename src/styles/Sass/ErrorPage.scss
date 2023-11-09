@@ -1,0 +1,36 @@
+#error-page {
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+	background-color: rgb(131, 182, 177);
+	.error-page-content {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(131, 182, 177);
+		.error-page-code {
+			background-color: rgb(131, 182, 177);
+			color: rgb(243, 118, 105);
+			font-size: 8rem;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+			font-weight: bold;
+		}
+		.error-page-txt {
+			background-color: rgb(131, 182, 177);
+			color: rgb(243, 118, 105);
+			font-size: 3rem;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+			font-weight: bold;
+		}
+		.error-page-back-to-homepage-link {
+			background-color: rgb(131, 182, 177);
+			text-decoration: none;
+			color: rgb(243, 118, 105);
+			font-size: 2rem;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+			font-weight: bold;
+		}
+	}
+}

@@ -1,3 +1,5 @@
+@import "./Breakpoints.scss";
+
 .skills-item {
 	flex: 0 0 30%;
 	display: flex;
@@ -5,4 +7,31 @@
 	align-items: center;
 	margin: 0.5rem;
 	gap: 1rem;
+	@include breakpoint(s-mobile) {
+		flex: 0 0 40%;
+		justify-content: center;
+	}
+	@include breakpoint(tablet) {
+		flex: 0 0 29%;
+		justify-content: center;
+	}
+	.skills-image {
+		width: 130px;
+		height: 130px;
+		@include breakpoint(s-mobile) {
+			width: 70px;
+			height: 70px;
+		}
+		@include breakpoint(tablet) {
+			width: 80px;
+			height: 80px;
+		}
+	}
+	.skills-title {
+		text-align: center;
+		@include breakpoint(s-mobile) {
+			font-size: 1rem;
+			text-align: center;
+		}
+	}
 }

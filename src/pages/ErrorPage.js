@@ -1,5 +1,6 @@
 import { useRouteError } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "../styles/Sass/ErrorPage.scss";
 
 function ErrorPage() {
 	const error = useRouteError();
@@ -15,7 +16,7 @@ function ErrorPage() {
 					Oups! La page que vous demandez n&apos;existe pas.
 				</p>
 				<Link to="/homepage" className="error-page-back-to-homepage-link">
-					Retourner sur la page n&apos;accueil
+					Retourner sur la page d&apos; accueil
 				</Link>
 			</div>
 		</div>

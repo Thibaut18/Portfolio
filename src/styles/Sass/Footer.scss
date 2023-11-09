@@ -1,7 +1,41 @@
+@import "./Breakpoints.scss";
+
 .footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 6rem;
+	min-height: 8rem;
+
+	.footer-txt {
+		font-family: "Agbalumo", sans-serif;
+		font-size: 2rem;
+		@include breakpoint(s-mobile) {
+			font-size: 1.5rem;
+		}
+
+		.github-icon {
+			text-decoration: none;
+			color: black;
+			margin-left: 1rem;
+			transition:
+				transform 0.3s ease,
+				box-shadow 0.3s ease;
+			border-radius: 3rem;
+			@media (hover: hover) {
+				&:hover {
+					transform: scale(1.05);
+					box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+				}
+			}
+			@media (hover: none) {
+				&:hover {
+				}
+				&:active {
+					transform: scale(1.05);
+					box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+				}
+			}
+		}
+	}
 }

@@ -1,3 +1,5 @@
+@import "./Breakpoints.scss";
+
 @keyframes bounce {
 	0%,
 	100% {
@@ -7,21 +9,63 @@
 		transform: translateX(5px);
 	}
 }
-.letter,
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.letter {
+	display: inline-block;
+	margin-right: 2px;
+	animation: bounce 0.6s infinite ease-in-out;
+	animation-play-state: paused;
+	background-color: black;
+	color: white;
+	@include breakpoint(s-mobile) {
+		display: none;
+	}
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}
 .icon {
 	display: inline-block;
 	margin-right: 2px;
-	animation: bounce 0.6s infinite;
-	animation-timing-function: ease-in-out;
+	animation: bounce 0.6s infinite ease-in-out;
 	animation-play-state: paused;
+	background-color: black;
+	color: white;
+	align-self: center;
+	@include breakpoint(s-mobile) {
+		animation: none;
+		animation: pulse 1.5s infinite !important;
+		font-size: 1.9rem;
+		border-radius: 50%;
+		margin-right: 0;
+	}
+	@include breakpoint(tablet) {
+		animation: none;
+		animation: pulse 1.5s infinite !important;
+		font-size: 1.9rem;
+		border-radius: 50%;
+		margin-right: 0;
+	}
 }
+
 .projects-item {
 	color: white;
 	display: flex;
 	flex-direction: column;
 	border-radius: 20px;
 	padding-top: 1rem;
-	padding-bottom: 3rem;
 	flex: 0 0 calc(50% - 2rem);
 	align-items: center;
 	height: 440px;
@@ -34,37 +78,123 @@
 		box-shadow 0.3s ease;
 	cursor: pointer;
 	position: relative;
-	border: 2px solid black;
-	&:hover {
-		transform: scale(1.05);
-		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-		.projects-item-hover-message {
-			display: block;
-		}
-		.letter,
-		.icon {
-			animation-play-state: running;
+	border: 3px solid black;
+	overflow: hidden;
+	padding-bottom: 0.5rem;
+	@media (hover: hover) {
+		&:hover {
+			transform: scale(1.05);
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 		}
 	}
-	.projects-item-hover-message {
-		color: black;
-		display: none;
-		position: absolute;
-		border: 3px solid black;
-		border-radius: 3rem;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 330px;
-		text-align: center;
-		padding: 3px;
+	@media (hover: none) {
+		&:hover {
+		}
+		&:active {
+			transform: scale(1.05);
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+		}
+	}
+	@include breakpoint(s-mobile) {
+		flex: none;
+		height: 300px;
+		width: 90%;
+	}
+	@include breakpoint(tablet) {
+		width: 90%;
+		flex: none;
+	}
+}
+
+.projects-item-hover-message {
+	color: black;
+	display: none;
+	position: absolute;
+	border: 3px solid black;
+	border-radius: 3rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 330px;
+	text-align: center;
+	padding: 3px;
+	background-color: black;
+	@include breakpoint(s-mobile) {
+		display: block;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		top: 92%;
+		left: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 25;
+		padding: 0;
+	}
+	@include breakpoint(tablet) {
+		display: block;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		top: 94.5%;
+		left: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 25;
+		padding: 0;
+	}
+}
+
+.projects-item-img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.projects-item-img-title-and-subtitle {
+	box-sizing: border-box;
+	border-top: 3px solid black;
+	width: 100%;
+	position: absolute;
+	bottom: 3px;
+	left: 50%;
+	display: flex;
+	flex-direction: row;
+	transform: translateX(-50%);
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	height: 3rem;
+	@include breakpoint(s-mobile) {
+		flex-direction: column;
+		height: 5rem;
 	}
 	.projects-item-img-title {
 		color: rgb(243, 118, 105);
+		font-size: 1.2rem;
+		text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 	}
-	.projects-item-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
+	.projects-item-img-subtitle {
+		color: black;
+		@include breakpoint(s-mobile) {
+			width: 60%;
+			text-align: center;
+		}
 	}
+}
+
+.projects-item:hover .letter,
+.projects-item:hover .icon {
+	animation-play-state: running;
+	@include breakpoint(s-mobile) {
+		animation-play-state: paused;
+	}
+	@include breakpoint(tablet) {
+		animation-play-state: paused;
+	}
+}
+
+.projects-item:hover .projects-item-hover-message {
+	display: block;
 }

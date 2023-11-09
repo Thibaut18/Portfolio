@@ -1,3 +1,5 @@
+@import "./Breakpoints.scss";
+
 .header {
 	padding: 1rem;
 	display: flex;
@@ -7,6 +9,17 @@
 	box-shadow:
 		0 4px 6px -1px rgba(0, 0, 0, 0.1),
 		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	@include breakpoint(s-mobile) {
+		flex-wrap: wrap;
+		justify-content: center;
+		height: 16rem;
+		padding: 0;
+	}
+	@include breakpoint(tablet) {
+		height: 20rem;
+		flex-direction: column;
+	}
+
 	.header-logo {
 		font-family: "Roboto", serif;
 		text-decoration: none;
@@ -24,25 +37,75 @@
 		animation-iteration-count: infinite;
 		font-size: 2rem;
 		line-height: 0.4;
+		@include breakpoint(tablet) {
+			color: rgb(131, 182, 177);
+		}
 	}
 	a {
 		text-decoration: none;
 		color: rgb(131, 182, 177);
+		transition:
+			transform 0.3s ease,
+			text-shadow 0.3s ease;
+		font-family: "Agbalumo", sans-serif;
+		font-size: 2rem;
+		@media (hover: hover) {
+			&:hover {
+				transform: scale(1.05);
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+			}
+		}
+		@media (hover: none) {
+			&:hover {
+			}
+			&:active {
+				transform: scale(1.05);
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+			}
+		}
+		@include breakpoint(s-mobile) {
+			font-size: 1.3rem;
+		}
+		@include breakpoint(l-mobile) {
+			font-size: 1.6rem;
+		}
+		@include breakpoint(tablet) {
+			font-size: 2rem;
+		}
 	}
 	.header-nav {
+		@include breakpoint(s-mobile) {
+			display: flex;
+			justify-content: center;
+		}
+		@include breakpoint(tablet) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		.header-nav-ul {
 			list-style: none;
 			display: flex;
 			flex-direction: row;
 			gap: 1rem;
+			@include breakpoint(s-mobile) {
+				text-align: center;
+				display: flex;
+				flex-wrap: wrap;
+				flex: 0 0 65%;
+				justify-content: center;
+			}
+			@include breakpoint(tablet) {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 3.5rem;
+			}
 			.header-nav-li {
 				font-size: 1.5rem;
-				transition:
-					transform 0.3s ease,
-					text-shadow 0.3s ease;
-				&:hover {
-					transform: scale(1.05);
-					text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+				font-weight: 500;
+				@include breakpoint(s-mobile) {
+					justify-content: center;
 				}
 			}
 		}

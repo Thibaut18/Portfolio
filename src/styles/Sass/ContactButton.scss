@@ -1,3 +1,5 @@
+@import "./Breakpoints.scss";
+
 .contact-btn-email {
 	height: 40px;
 	border: 4px solid rgb(131, 182, 177);
@@ -9,14 +11,40 @@
 	justify-content: center;
 	transition:
 		transform 0.3s ease,
-		text-shadow 0.3s ease;
-	&:hover {
-		transform: scale(1.05);
-		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+		box-shadow 0.3s ease;
+	@include breakpoint(s-mobile) {
+		margin-bottom: 0.8rem;
 	}
+	@include breakpoint(tablet) {
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			transform: scale(1.05);
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	@media (hover: none) {
+		&:hover {
+		}
+		&:active {
+			transform: scale(1.05);
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+		}
+	}
+
 	.contact-btn-email-txt {
-		color: rgb(131, 182, 177);
 		margin: 0;
 		font-size: 1.3rem;
+		color: rgb(131, 182, 177);
+		@include breakpoint(s-mobile) {
+			font-size: 1.1rem;
+		}
+		@include breakpoint(tablet) {
+			font-size: 1.3rem;
+		}
 	}
 }

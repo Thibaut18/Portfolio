@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "../styles/Sass/ProjectsItem.scss";
 
-function ProjectsItem({ title, imgSrc, alt, repoUrl }) {
+function ProjectsItem({ title, subtitle, imgSrc, alt, repoUrl }) {
 	const handleProjectClick = () => {
 		window.open(repoUrl, "_blank");
 	};
@@ -31,7 +31,10 @@ function ProjectsItem({ title, imgSrc, alt, repoUrl }) {
 				</p>
 			</div>
 			<img src={imgSrc} alt={alt} className="projects-item-img" />
-			<h2 className="projects-item-img-title">{title}</h2>
+			<div className="projects-item-img-title-and-subtitle">
+				<h2 className="projects-item-img-title">{title}</h2>
+				<p className="projects-item-img-subtitle">{subtitle}</p>
+			</div>
 		</div>
 	);
 }
@@ -40,6 +43,7 @@ ProjectsItem.propTypes = {
 	title: PropTypes.string.isRequired,
 	imgSrc: PropTypes.string.isRequired,
 	alt: PropTypes.string.isRequired,
+	subtitle: PropTypes.string.isRequired,
 	repoUrl: PropTypes.string,
 };
 

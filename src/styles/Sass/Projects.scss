@@ -1,3 +1,5 @@
+@import "./Breakpoints.scss";
+
 .projects-section {
 	display: flex;
 	flex-direction: column;
@@ -14,16 +16,28 @@
 		gap: 2rem;
 		margin-right: 6rem;
 		margin-left: 6rem;
+		@include breakpoint(s-mobile) {
+			margin: 0;
+			flex-direction: column;
+			align-items: center;
+		}
+		@include breakpoint(tablet) {
+			flex-direction: column;
+			margin: 0;
+			align-items: center;
+		}
 	}
 	.projects-section-title {
 		background-color: rgb(131, 182, 177);
 		position: relative;
 		display: inline-block;
 		color: white;
-		font-size: 2rem;
+		font-size: 4rem;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 		margin-bottom: 6rem;
 		margin-top: 2rem;
+		font-family: "Agbalumo", sans-serif;
+		font-weight: 200;
 		&::after {
 			content: "";
 			position: absolute;
@@ -32,15 +46,18 @@
 			transform: translateX(-50%);
 			width: 80%;
 			height: 3px;
-			background-color: goldenrod;
+			background-color: rgb(243, 118, 105);
 			box-shadow:
-				0 0 5px yellow,
-				0 0 10px yellow,
-				0 0 20px yellow,
-				0 0 30px yellow,
-				0 0 40px yellow,
-				0 0 70px yellow;
+				0 0 5px rgb(243, 118, 105),
+				0 0 10px rgb(243, 118, 105),
+				0 0 20px rgb(243, 118, 105),
+				0 0 30px rgb(243, 118, 105),
+				0 0 40px rgb(243, 118, 105),
+				0 0 70px rgb(243, 118, 105);
 			opacity: 0.7;
+		}
+		@include breakpoint(s-mobile) {
+			font-size: 2rem;
 		}
 	}
 }
