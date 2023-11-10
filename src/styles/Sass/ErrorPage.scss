@@ -1,3 +1,5 @@
+@import "./Breakpoints.scss";
+
 #error-page {
 	min-height: 80vh;
 	display: flex;
@@ -16,6 +18,9 @@
 			font-size: 8rem;
 			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 			font-weight: bold;
+			@include breakpoint(s-mobile) {
+				font-size: 7rem;
+			}
 		}
 		.error-page-txt {
 			background-color: rgb(131, 182, 177);
@@ -23,6 +28,13 @@
 			font-size: 3rem;
 			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 			font-weight: bold;
+			@include breakpoint(s-mobile) {
+				font-size: 2rem;
+				text-align: center;
+			}
+			@include breakpoint(tablet) {
+				text-align: center;
+			}
 		}
 		.error-page-back-to-homepage-link {
 			background-color: rgb(131, 182, 177);
@@ -31,6 +43,10 @@
 			font-size: 2rem;
 			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 			font-weight: bold;
+			@include breakpoint(s-mobile) {
+				text-align: center;
+				font-size: 1.5rem;
+			}
 		}
 	}
 }

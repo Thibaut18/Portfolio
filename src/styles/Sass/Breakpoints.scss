@@ -14,6 +14,14 @@ $breakpoints: (
 		min: 420px,
 		max: 767.9px,
 	),
+	l-screen: (
+		min: 2000px,
+		max: 2600px,
+	),
+	m-screen: (
+		min: 1300px,
+		max: 1441px,
+	),
 );
 
 @mixin breakpoint($break) {

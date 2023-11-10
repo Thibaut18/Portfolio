@@ -11,7 +11,7 @@ function About() {
 						<img
 							src={profilePic}
 							alt="Photo de profil"
-							className="about-section-img"
+							className="about-section-img-profil"
 						/>
 					</div>
 				</div>

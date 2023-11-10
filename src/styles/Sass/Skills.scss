@@ -61,5 +61,10 @@
 		@include breakpoint(tablet) {
 			width: 90%;
 		}
+		@include breakpoint(l-screen) {
+			width: 80%;
+			justify-content: center;
+			gap: 3rem;
+		}
 	}
 }
