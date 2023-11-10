@@ -4,20 +4,23 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	height: 700px;
+	height: 750px;
 	align-items: center;
 	@include breakpoint(s-mobile) {
 		flex-direction: column-reverse;
-		height: 1400px;
+		height: 1450px;
 		width: 100%;
 		justify-content: center;
+	}
+	@include breakpoint(m-mobile) {
+		height: 1350px;
 	}
 	@include breakpoint(l-mobile) {
 		height: 1300px;
 	}
 	@include breakpoint(tablet) {
 		flex-direction: column-reverse;
-		height: 1100px;
+		height: 1150px;
 	}
 	@include breakpoint(l-screen) {
 		height: 1200px;
@@ -32,7 +35,7 @@
 		gap: 1rem;
 		width: 900px;
 		border-radius: 20px;
-		height: 600px;
+		height: 650px;
 		padding-top: 1rem;
 		padding-bottom: 3rem;
 		box-shadow:
@@ -40,18 +43,18 @@
 			0 4px 8px -1px rgba(0, 0, 0, 0.06);
 		margin-top: 4rem;
 		@include breakpoint(s-mobile) {
-			height: 1160px;
+			height: 1200px;
 			width: 90%;
 		}
 		@include breakpoint(m-mobile) {
-			height: 990px;
+			height: 1060px;
 		}
 		@include breakpoint(l-mobile) {
-			height: 950px;
+			height: 970px;
 		}
 		@include breakpoint(tablet) {
 			width: 90%;
-			height: 670px;
+			height: 720px;
 		}
 		@include breakpoint(l-screen) {
 			height: 890px;
@@ -128,6 +131,25 @@
 		}
 		@include breakpoint(l-screen) {
 			font-size: 1.5rem;
+		}
+		.cv-btn-link {
+			display: flex;
+			justify-content: center;
+			text-decoration: none;
+			@include breakpoint(c-portable) {
+				margin-top: 2rem;
+			}
+		}
+		.cv-btn {
+			background-color: rgb(243, 118, 105);
+			padding: 0.5rem;
+			border-radius: 2rem;
+			font-size: 1rem;
+			font-family: "Agbalumo", sans-serif;
+			border-color: black;
+			@include breakpoint(l-screen) {
+				font-size: 1.6rem;
+			}
 		}
 	}
 	.about-section-img {

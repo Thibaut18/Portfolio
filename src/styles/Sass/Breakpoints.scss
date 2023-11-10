@@ -22,6 +22,10 @@ $breakpoints: (
 		min: 1300px,
 		max: 1441px,
 	),
+	c-portable: (
+		min: 850px,
+		max: 1024px,
+	),
 );
 
 @mixin breakpoint($break) {

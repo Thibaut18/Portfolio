@@ -43,6 +43,16 @@ function About() {
 				<p className="about-section-txt">
 					Je retourne coder, en vous souhaitant une bonne journée ! ;){" "}
 				</p>
+				<a
+					className="cv-btn-link"
+					href="https://drive.google.com/file/d/1vuz53VAEHepLoU6LvCBpryqSArDVbXEk/view?usp=drive_link"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<button type="button" className="cv-btn">
+						Mon CV
+					</button>
+				</a>
 			</div>
 			<img
 				src={imgDvp}
