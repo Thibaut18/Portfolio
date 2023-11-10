@@ -26,6 +26,10 @@ $breakpoints: (
 		min: 850px,
 		max: 1024px,
 	),
+	i-12: (
+		min: 460px,
+		max: 500px,
+	),
 );
 
 @mixin breakpoint($break) {
