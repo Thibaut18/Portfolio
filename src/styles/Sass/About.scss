@@ -42,6 +42,7 @@
 			0 8px 16px -1px rgba(0, 0, 0, 0.1),
 			0 4px 8px -1px rgba(0, 0, 0, 0.06);
 		margin-top: 4rem;
+		position: relative;
 		@include breakpoint(s-mobile) {
 			height: 1200px;
 			width: 90%;
@@ -133,16 +134,12 @@
 			font-size: 1.5rem;
 		}
 		.cv-btn-link {
-			display: flex;
-			justify-content: center;
 			text-decoration: none;
 			color: black;
-			@include breakpoint(c-portable) {
-				margin-top: 2rem;
-			}
-			@include breakpoint(i-12) {
-				margin-top: 1.5rem;
-			}
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 		.cv-btn {
 			background-color: rgb(243, 118, 105);
